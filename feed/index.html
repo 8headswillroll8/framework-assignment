@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Orbit | Feed</title>
+  </head>
+
+  <body class="min-h-screen md:text-lg">
+    <header class="p-6 md:px-8">
+      <div>
+        <img
+          src="../src/assets/graphic/orbit-logo.svg"
+          alt="Orbit logo"
+          class="h-7 w-auto md:h-8"
+        />
+      </div>
+    </header>
+
+    <main
+      class="mx-auto flex max-w-md flex-col gap-4 px-6 py-8 md:max-w-2xl md:gap-6 md:px-8"
+    >
+      <!-- search & filter -->
+      <form class="flex gap-3">
+        <label for="search" class="hidden">Search posts</label>
+
+        <div
+          class="flex h-11 flex-1 items-center gap-3 rounded-full border border-gray-300 px-4 md:h-12"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            class="size-5 text-black md:size-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+            />
+          </svg>
+
+          <input
+            id="search"
+            type="search"
+            placeholder="Search posts..."
+            class="w-full bg-transparent outline-none placeholder:text-gray-400"
+          />
+        </div>
+
+        <select
+          class="h-11 rounded-full border border-gray-300 px-4 font-medium md:h-12"
+        >
+          <option>Latest</option>
+          <option>Oldest</option>
+          <option>Popular</option>
+        </select>
+      </form>
+
+      <!-- Create Post -->
+      <div
+        class="flex flex-col gap-2 rounded-lg border border-gray-300 p-6 md:gap-4 md:p-8"
+      >
+        <div class="mb-4 flex items-center gap-3">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-6 md:size-7"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"
+            />
+          </svg>
+
+          <h2 class="text-2xl font-bold md:text-3xl">Create post</h2>
+        </div>
+
+        <div>
+          <label for="create-post" class="hidden">Create post</label>
+
+          <textarea
+            id="create-post"
+            rows="5"
+            placeholder="What's on your mind?"
+            class="w-full rounded-lg border border-gray-300 px-4 py-3 outline-none"
+          ></textarea>
+        </div>
+
+        <div class="flex flex-row justify-between">
+          <div class="rounded-lg border border-gray-300 p-2 md:p-3">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-6 md:size-7"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"
+              />
+            </svg>
+          </div>
+
+          <button
+            type="button"
+            class="h-11 min-w-28 rounded-full bg-black px-6 text-white md:h-12"
+          >
+            Post
+          </button>
+        </div>
+      </div>
+
+      <!-- Post 1 -->
+      <div
+        class="flex flex-col gap-2 rounded-lg border border-gray-300 p-6 md:gap-4 md:p-8"
+      >
+        <!-- user -->
+        <div class="flex items-center gap-3">
+          <div class="h-10 w-10 overflow-hidden rounded-full md:h-12 md:w-12">
+            <img
+              class="h-full w-full object-cover"
+              src="../src/assets/image/profile/milescarter-profile.webp"
+              alt=""
+            />
+          </div>
+
+          <div>
+            <p class="font-bold">milescarter</p>
+            <p class="text-sm text-neutral-500 md:text-base">3 minutes ago</p>
+          </div>
+        </div>
+
+        <!-- content -->
+        <div class="flex flex-col gap-3 md:gap-4">
+          <p>
+            Found this photo while clearing out my camera roll. Still one of my
+            favorites
+          </p>
+
+          <div class="overflow-hidden rounded-lg">
+            <img
+              class="w-full object-cover"
+              src="../src/assets/image/content/floral-portrait-colorful-suit.webp"
+              alt="Person wearing a red and blue floral suit sits among pink flowers and green plants, looking toward the camera."
+            />
+          </div>
+        </div>
+
+        <!-- actions -->
+        <div class="flex justify-between">
+          <div class="flex gap-8 md:gap-10">
+            <!-- like -->
+            <div class="flex gap-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-6 md:size-7"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                />
+              </svg>
+              <p>6</p>
+            </div>
+
+            <!-- comment -->
+            <div class="flex gap-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-6 md:size-7"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M2.25 12.76c0 1.6 1.123 2.994 2.707 3.227 1.068.157 2.148.279 3.238.364.466.037.893.281 1.153.671L12 21l2.652-3.978c.26-.39.687-.634 1.153-.67 1.09-.086 2.17-.208 3.238-.365 1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z"
+                />
+              </svg>
+
+              <p>1</p>
+            </div>
+          </div>
+
+          <!-- save -->
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-6 md:size-7"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <!-- Post 2 -->
+      <div
+        class="flex flex-col gap-2 rounded-lg border border-gray-300 p-6 md:gap-4 md:p-8"
+      >
+        <!-- user -->
+        <div class="flex items-center gap-3">
+          <div class="h-10 w-10 overflow-hidden rounded-full md:h-12 md:w-12">
+            <img
+              class="h-full w-full object-cover"
+              src="../src/assets/image/profile/heyitsava-profile.webp"
+              alt=""
+            />
+          </div>
+
+          <div>
+            <p class="font-bold">heyitsava</p>
+            <p class="text-sm text-neutral-500 md:text-base">12 minutes ago</p>
+          </div>
+        </div>
+
+        <!-- content -->
+        <div class="flex flex-col gap-3 md:gap-4">
+          <p>View from todays trip in my kayak</p>
+
+          <div class="overflow-hidden rounded-lg">
+            <img
+              class="w-full object-cover"
+              src="../src/assets/image/content/red-kayak-mountain-lake.webp"
+              alt="Red kayak on a lake facing a mountain range"
+            />
+          </div>
+        </div>
+
+        <!-- actions -->
+        <div class="flex justify-between">
+          <div class="flex gap-8 md:gap-10">
+            <!-- like -->
+            <div class="flex gap-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-6 md:size-7"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                />
+              </svg>
+              <p>128</p>
+            </div>
+
+            <!-- comment -->
+            <div class="flex gap-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-6 md:size-7"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M2.25 12.76c0 1.6 1.123 2.994 2.707 3.227 1.068.157 2.148.279 3.238.364.466.037.893.281 1.153.671L12 21l2.652-3.978c.26-.39.687-.634 1.153-.67 1.09-.086 2.17-.208 3.238-.365 1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z"
+                />
+              </svg>
+
+              <p>12</p>
+            </div>
+          </div>
+
+          <!-- save -->
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-6 md:size-7"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <!-- Post 3 -->
+      <div
+        class="flex flex-col gap-2 rounded-lg border border-gray-300 p-6 md:gap-4 md:p-8"
+      >
+        <!-- user -->
+        <div class="flex items-center gap-3">
+          <div class="h-10 w-10 overflow-hidden rounded-full md:h-12 md:w-12">
+            <img
+              class="h-full w-full object-cover"
+              src="../src/assets/image/profile/elliotframes-profile.webp"
+              alt=""
+            />
+          </div>
+
+          <div>
+            <p class="font-bold">elliotframes</p>
+            <p class="text-sm text-neutral-500 md:text-base">56 minutes ago</p>
+          </div>
+        </div>
+
+        <!-- content -->
+        <div class="flex flex-col gap-3 md:gap-4">
+          <p>Behind the scenes from a recent campaign shoot❄️</p>
+
+          <div class="overflow-hidden rounded-lg">
+            <img
+              class="w-full object-cover"
+              src="../src/assets/image/content/winter-portrait-transparent-panel-frozen-landscape.webp"
+              alt="Red kayak on a lake facing a mountain range"
+            />
+          </div>
+        </div>
+
+        <!-- actions -->
+        <div class="flex justify-between">
+          <div class="flex gap-8 md:gap-10">
+            <!-- like -->
+            <div class="flex gap-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-6 md:size-7"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                />
+              </svg>
+              <p>321</p>
+            </div>
+
+            <!-- comment -->
+            <div class="flex gap-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-6 md:size-7"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M2.25 12.76c0 1.6 1.123 2.994 2.707 3.227 1.068.157 2.148.279 3.238.364.466.037.893.281 1.153.671L12 21l2.652-3.978c.26-.39.687-.634 1.153-.67 1.09-.086 2.17-.208 3.238-.365 1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z"
+                />
+              </svg>
+
+              <p>36</p>
+            </div>
+          </div>
+
+          <!-- save -->
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-6 md:size-7"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <!-- Post 4 -->
+      <div
+        class="flex flex-col gap-2 rounded-lg border border-gray-300 p-6 md:gap-4 md:p-8"
+      >
+        <!-- user -->
+        <div class="flex items-center gap-3">
+          <div class="h-10 w-10 overflow-hidden rounded-full md:h-12 md:w-12">
+            <img
+              class="h-full w-full object-cover"
+              src="../src/assets/image/profile/jessyess-profile.webp"
+              alt=""
+            />
+          </div>
+
+          <div>
+            <p class="font-bold">jessyess</p>
+            <p class="text-sm text-neutral-500 md:text-base">1 hour ago</p>
+          </div>
+        </div>
+
+        <!-- content -->
+        <div class="flex flex-col gap-3 md:gap-4">
+          <p>Sunny days, cold snacks, and nowhere to be.</p>
+
+          <div class="overflow-hidden rounded-lg">
+            <img
+              class="w-full object-cover"
+              src="../src/assets/image/content/friends-relaxing-on-picnic-blanket.webp"
+              alt="Three friends relax on a picnic blanket in a grassy park while enjoying frozen treats on a sunny day."
+            />
+          </div>
+        </div>
+
+        <!-- actions -->
+        <div class="flex justify-between">
+          <div class="flex gap-8 md:gap-10">
+            <!-- like -->
+            <div class="flex gap-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-6 md:size-7"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                />
+              </svg>
+              <p>89</p>
+            </div>
+
+            <!-- comment -->
+            <div class="flex gap-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-6 md:size-7"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M2.25 12.76c0 1.6 1.123 2.994 2.707 3.227 1.068.157 2.148.279 3.238.364.466.037.893.281 1.153.671L12 21l2.652-3.978c.26-.39.687-.634 1.153-.67 1.09-.086 2.17-.208 3.238-.365 1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z"
+                />
+              </svg>
+
+              <p>5</p>
+            </div>
+          </div>
+
+          <!-- save -->
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-6 md:size-7"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
