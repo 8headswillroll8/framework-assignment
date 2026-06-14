@@ -21,7 +21,7 @@
         /></a>
       </div>
       <div>
-        <a href="../profile/index.html">
+        <a href="../profile/index.html" aria-label="Go to profile">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -48,7 +48,7 @@
         <label for="search" class="hidden">Search posts</label>
 
         <div
-          class="flex h-11 flex-1 items-center gap-3 rounded-full border border-gray-300 px-4 md:h-12"
+          class="flex h-11 flex-1 items-center gap-3 rounded-full border border-gray-300 px-4 focus-within:border-orange-500 md:h-12"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -74,6 +74,7 @@
         </div>
 
         <select
+          aria-label="Sort posts"
           class="h-11 rounded-full border border-gray-300 px-4 font-medium md:h-12"
         >
           <option>Latest</option>
@@ -112,7 +113,7 @@
             id="create-post"
             rows="5"
             placeholder="What's on your mind?"
-            class="w-full rounded-lg border border-gray-300 px-4 py-3 outline-none"
+            class="w-full rounded-lg border border-gray-300 px-4 py-3 outline-none focus:border-orange-500"
           ></textarea>
         </div>
 
